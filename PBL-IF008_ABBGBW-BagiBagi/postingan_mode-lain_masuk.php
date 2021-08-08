@@ -197,7 +197,7 @@ $user = $_SESSION['user'];
             $no = 1;
             $barang = mysqli_query(
                 $koneksi,
-                "SELECT * FROM barang LEFT JOIN pengguna ON barang.id_pengguna = pengguna.id_pengguna JOIN kategori ON barang.id_kategori = kategori.id_kategori WHERE barang.id_pengguna = '" . $_GET['id_pengguna'] . "'"
+                "SELECT * FROM barang LEFT JOIN kategori ON barang.id_kategori = kategori.id_kategori WHERE barang.id_pengguna = '" . $_GET['id_pengguna'] . "'"
             );
             if (mysqli_num_rows($barang) > 0) {
                 while ($row = mysqli_fetch_array($barang)) {
